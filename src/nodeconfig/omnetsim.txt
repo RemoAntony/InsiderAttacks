@@ -1,0 +1,105 @@
+[Config Wireless01]
+network = testing.WirelessA
+sim-time-limit = 25s
+*.host*.networkLayer.arpType = "GlobalARP"
+record-eventlog = true
+
+*.hostA.numUdpApps = 1
+*.hostA.udpApp[0].typename = "UDPBasicApp"
+*.hostA.udpApp[0].destAddresses = "hostB"
+*.hostA.udpApp[0].destPort = 5000
+*.hostA.udpApp[0].bitrate=1Mbps
+*.hostA.udpApp[0].messageLength = 1000B
+*.hostA.udpApp[0].sendInterval = exponential(1ms)
+*.hostA.udpApp[0].packetName = "UDPData"
+*.hostA.udpApp[0].delay=1ms
+
+
+*.hostC.numUdpApps = 1
+*.hostC.udpApp[0].typename = "UDPBasicApp"
+*.hostC.udpApp[0].destAddresses = "hostB"
+*.hostC.udpApp[0].destPort = 5000
+*.hostC.udpApp[0].bitrate=1Mbps
+*.hostC.udpApp[0].messageLength = 1000B
+*.hostC.udpApp[0].sendInterval = exponential(1ms)
+*.hostC.udpApp[0].packetName = "UDPData"
+*.hostC.udpApp[0].delay=1ms
+
+*.hostD.numUdpApps = 1
+*.hostD.udpApp[0].typename = "UDPBasicApp"
+*.hostD.udpApp[0].destAddresses = "hostB"
+*.hostD.udpApp[0].destPort = 5000
+*.hostD.udpApp[0].bitrate=1Mbps
+*.hostD.udpApp[0].messageLength = 1000B
+*.hostD.udpApp[0].sendInterval = exponential(1ms)
+*.hostD.udpApp[0].packetName = "UDPData"
+*.hostD.udpApp[0].delay=1ms
+
+*.hostE.numUdpApps = 1
+*.hostE.udpApp[0].typename = "UDPBasicApp"
+*.hostE.udpApp[0].destAddresses = "hostB"
+*.hostE.udpApp[0].destPort = 5000
+*.hostE.udpApp[0].bitrate=1Mbps
+*.hostE.udpApp[0].messageLength = 1000B
+*.hostE.udpApp[0].sendInterval = exponential(1ms)
+*.hostE.udpApp[0].packetName = "UDPData"
+*.hostE.udpApp[0].delay=1ms
+
+*.hostF.numUdpApps = 1
+*.hostF.udpApp[0].typename = "UDPBasicApp"
+*.hostF.udpApp[0].destAddresses = "hostB"
+*.hostF.udpApp[0].destPort = 5000
+*.hostF.udpApp[0].bitrate=1Mbps
+*.hostF.udpApp[0].messageLength = 1000B
+*.hostF.udpApp[0].sendInterval = exponential(1ms)
+*.hostF.udpApp[0].packetName = "UDPData"
+*.hostF.udpApp[0].delay=1ms
+
+*.hostG.numUdpApps = 1
+*.hostG.udpApp[0].typename = "UDPBasicApp"
+*.hostG.udpApp[0].destAddresses = "hostB"
+*.hostG.udpApp[0].destPort = 5000
+*.hostG.udpApp[0].bitrate=1Mbps
+*.hostG.udpApp[0].messageLength = 1000B
+*.hostG.udpApp[0].sendInterval = exponential(50ms)
+*.hostG.udpApp[0].packetName = "UDPData"
+*.hostG.udpApp[0].delay=5ms
+
+
+*.hostH.numUdpApps = 1
+*.hostH.udpApp[0].typename = "UDPBasicApp"
+*.hostH.udpApp[0].destAddresses = "hostB"
+*.hostH.udpApp[0].destPort = 5000
+*.hostH.udpApp[0].messageLength = 1000B
+*.hostH.udpApp[0].sendInterval = exponential(1ms)
+*.hostH.udpApp[0].packetName = "UDPData"
+*.hostH.udpApp[0].delay=1ms
+*.hostH.udpApp[0].bitrate=1Mbps
+
+*.hostB.numUdpApps = 1
+*.hostB.udpApp[0].typename = "UDPSink"
+*.hostB.udpApp[0].localPort = 5000
+
+
+*.host*.wlan[0].typename = "IdealWirelessNic"
+*.host*.wlan[0].mac.useAck = false
+*.host*.wlan[0].mac.fullDuplex = false
+*.host*.wlan[0].radio.transmitter.communicationRange = 450m
+*.host*.wlan[0].radio.receiver.ignoreInterference = true
+*.host*.**.bitrate = 1Mbps
+
+
+[Config Wireless02]
+extends = Wireless01
+*.hostA.wlan[0].radio.displayCommunicationRange = false
+*.hostC.wlan[0].radio.displayCommunicationRange = false
+*.hostD.wlan[0].radio.displayCommunicationRange = false
+*.hostE.wlan[0].radio.displayCommunicationRange = false
+*.hostF.wlan[0].radio.displayCommunicationRange = false
+*.hostG.wlan[0].radio.displayCommunicationRange = false
+*.hostH.wlan[0].radio.displayCommunicationRange = false
+*.visualizer.sceneVisualizer.descriptionFigure = "title"
+*.visualizer.mediumVisualizer.displaySignals = true
+*.visualizer.mediumVisualizer.signalPropagationUpdateInterval = 100ns
+
+
