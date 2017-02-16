@@ -39,7 +39,7 @@ public class FinalSuspectLine extends ApplicationFrame
    {
       DefaultCategoryDataset dataset = new DefaultCategoryDataset( );
       for(int i=0;i<suspectline.size();i++){
-      dataset.addValue( Double.valueOf(suspectline.get(i)) , "Degree Of Suspect" , "Node "+i+"" );
+      dataset.addValue((1- Double.valueOf(suspectline.get(i)))*100 , "Degree Of Suspect" , "Node "+i+"" );
       }
       return dataset;
    }
