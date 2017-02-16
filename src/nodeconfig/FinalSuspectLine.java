@@ -38,9 +38,8 @@ public class FinalSuspectLine extends ApplicationFrame
    private DefaultCategoryDataset createDataset( )
    {
       DefaultCategoryDataset dataset = new DefaultCategoryDataset( );
-      for(int i=0;i<StoringNodes.SetOfAllNodes.size();i++){
-          Node cur=StoringNodes.SetOfAllNodes.get(i);   
-      dataset.addValue( cur.degreeofsuspect , "Degree Of Suspect" , cur.Name );
+      for(int i=0;i<suspectline.size();i++){
+      dataset.addValue( suspectline.get(i) , "Degree Of Suspect" , "Node "+i+"" );
       }
       return dataset;
    }
